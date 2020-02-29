@@ -15,7 +15,7 @@ class Graph {
         if (this.adjList.has(vertex)){
             if (this.adjList.has(node)) {
                 let arr = this.adjList.get(vertex)
-            }
+                }
         }
     }
 

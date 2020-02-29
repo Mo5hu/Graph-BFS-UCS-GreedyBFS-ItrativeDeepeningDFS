@@ -28,6 +28,10 @@ graph.addVertex('A')
 graph.addVertex('B')
 graph.addVertex('C')
 graph.addVertex('D')
+graph.addVertex('E')
+graph.addVertex('F')
+
+// console.log(graph.adjList);
 
 graph.addEdge('A', 'B')
 graph.addEdge('A', 'D')

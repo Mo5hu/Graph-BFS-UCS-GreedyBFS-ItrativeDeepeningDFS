@@ -19,7 +19,11 @@ class Graph {
         }
     }
 
-    // print(){}
+    print(){
+        for (let [key, value] of this.adjList) {
+            console.log(key, value);
+        }
+    }
 
 }
 

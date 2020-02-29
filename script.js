@@ -47,3 +47,5 @@ graph.addEdge('D', 'E')
 graph.addEdge('E', 'B')
 graph.addEdge('F', 'B')
 graph.addEdge('C', 'B')
+
+graph.print()

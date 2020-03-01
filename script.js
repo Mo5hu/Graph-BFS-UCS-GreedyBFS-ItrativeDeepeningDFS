@@ -301,5 +301,3 @@ graphObjectPresent.greedyBestFirstSearch()
 graphObjectPresent.iterativeDeepeningSearch()
 
 // console.log(graphObjectPresent.adjecencyMatrix2D.key(1).node);
-
-graph.print()

@@ -5,14 +5,14 @@ class Graph {
 		this.stop = "Bucharest"
 	}
 
-    addVertex(vertex) {
-        if (!this.adjList.has(vertex)) {
-            this.adjList.set(vertex, [])
-        } else {
-            throw 'Already Exist!'
-        }
-    }
-    
+	addVertexNodeOfGraphs(vertexStartNode) {
+		if (!this.adjecencyMatrix2D.has(vertexStartNode)) {
+			this.adjecencyMatrix2D.set(vertexStartNode, [])
+		} else {
+			throw 'Already Exist!'
+		}
+	}
+	
     addEdge(vertex, node) {
         if (this.adjList.has(vertex)){
             if (this.adjList.has(node)) {

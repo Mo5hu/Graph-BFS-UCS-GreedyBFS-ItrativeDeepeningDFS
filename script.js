@@ -74,7 +74,7 @@ class Graph {
 					visited[elem.node] = true;
 					q.unshift(elem.node);
 				}
-}
+			}
 
 let graph = new Graph()
 graph.addVertex('A')

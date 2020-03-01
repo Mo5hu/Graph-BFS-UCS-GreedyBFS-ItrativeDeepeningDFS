@@ -75,6 +75,156 @@ class Graph {
 					q.unshift(elem.node);
 				}
 			}
+		}while(q.length && q[3] != this.stop);
+		current = q.pop()
+		console.log(current);
+		let arr = this.adjecencyMatrix2D.get(current);	
+		console.log(arr)
+
+	}
+
+	iterativeDeepeningSearch(){
+		console.log("------------------------ITERAIVE-DEEPNING-SEARCH---------------------");
+		let visited = this.createVisitedObject();  
+		this.idsRecuring(this.start, visited);
+	}
+
+	idsRecuring(initialNode, visited){
+		if(initialNode){
+			visited[initialNode] = true;  
+			console.log(initialNode);
+		
+			let arr = this.adjecencyMatrix2D.get(initialNode);
+		
+			console.log(arr);
+			
+
+			for(let elem of arr){
+				if(!visited[elem.node]){
+				this.idsRecuring(elem.node, visited);
+				}	  
+			}
+		}
+	}
+
+	greedyBestFirstSearch(){
+		console.log("------------------------GREEDY-FIRST-FIRST-SEARCH---------------------");
+		
+		let visited = this.createVisitedObject();
+		let q = [];
+		let br = 0;
+		visited[this.start] = true;
+		q.push(this.start);
+		// console.log(q);
+		let current;
+			
+		do{
+			current = q.pop()
+			br++;
+			// console.log(visited);
+			
+			console.log(q);
+			console.log(current);
+			let arr = this.adjecencyMatrix2D.get(current);	
+			console.log(arr)
+
+			for(let elem of arr){
+				if(!visited[elem.node]){
+					visited[elem.node] = true;
+					q.unshift(elem.node);
+				}
+			}
+		}while(q.length && q[3] != this.stop);
+		current = q.pop()
+		console.log(current);
+		let arr = this.adjecencyMatrix2D.get(current);	
+		console.log(arr)
+
+	}
+
+	uniformCostSearch(){
+		console.log("------------------------UNIFORM-COST-SEARCH---------------------");
+		let visited = this.createVisitedObject();  
+		this.ucsRecuring(this.start, visited);
+	}
+
+	ucsRecuring(initialNode, visited){
+		if(initialNode){
+			visited[initialNode] = true;  
+			console.log(initialNode);
+		
+			let arr = this.adjecencyMatrix2D.get(initialNode);
+		
+			console.log(arr);
+			
+
+			for(let elem of arr){
+				if(!visited[elem.node]){
+				this.idsRecuring(elem.node, visited);
+				}	  
+			}
+		}
+	}
+
+}
+
+var cy = cytoscape({
+	container: document.getElementById('cy'),
+	elements: [
+		{ data: { id: 'a' } },
+  { data: { id: 'b' } },
+  { data: { id: 'c' } },
+  { data: { id: 'd' } },
+  { data: { id: 'e' } },
+  { data: { id: 'f' } },
+  // edges
+  {
+    data: {
+      id: 'ab',
+      source: 'a',
+      target: 'b'
+    }
+  },
+  {
+    data: {
+      id: 'cd',
+      source: 'c',
+      target: 'd'
+    }
+  },
+  {
+    data: {
+      id: 'ef',
+      source: 'e',
+      target: 'f'
+    }
+  },
+  {
+    data: {
+      id: 'ac',
+      source: 'a',
+      target: 'c'
+    }
+  },
+  {
+    data: {
+      id: 'be',
+      source: 'b',
+      target: 'e'
+    }
+  }
+	],
+	style: [
+		{
+			selector: 'node',
+			style: {
+				shape: 'circle',
+				'background-color': 'black',
+				label: 'data(id)'
+			}
+		}
+	]
+});
 
 let graph = new Graph()
 graph.addVertex('A')

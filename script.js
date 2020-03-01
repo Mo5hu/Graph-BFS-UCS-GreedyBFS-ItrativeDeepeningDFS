@@ -33,11 +33,11 @@ class Graph {
 		}
 	}
 
-    print(){
-        for (let [key, value] of this.adjList) {
-            console.log(key, value);
-        }
-    }
+	printGraph(){
+		for (let [key, value] of this.adjecencyMatrix2D) {
+			console.log(key, value);
+		}
+	}
 
 }
 

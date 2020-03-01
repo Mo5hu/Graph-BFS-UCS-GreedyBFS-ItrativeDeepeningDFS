@@ -1,7 +1,9 @@
 class Graph {
     constructor() {
-        this.adjList = new Map();
-    }
+		this.adjecencyMatrix2D = new Map();
+		this.start = "Arad"
+		this.stop = "Bucharest"
+	}
 
     addVertex(vertex) {
         if (!this.adjList.has(vertex)) {

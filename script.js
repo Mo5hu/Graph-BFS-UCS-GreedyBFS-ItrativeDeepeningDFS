@@ -300,15 +300,6 @@ graphObjectPresent.greedyBestFirstSearch()
 
 graphObjectPresent.iterativeDeepeningSearch()
 
-graph.addEdge('A', 'B')
-graph.addEdge('A', 'D')
-graph.addEdge('A', 'F')
-graph.addEdge('B', 'E')
-graph.addEdge('B', 'C')
-graph.addEdge('C', 'F')
-graph.addEdge('D', 'E')
-graph.addEdge('E', 'B')
-graph.addEdge('F', 'B')
-graph.addEdge('C', 'B')
+// console.log(graphObjectPresent.adjecencyMatrix2D.key(1).node);
 
 graph.print()

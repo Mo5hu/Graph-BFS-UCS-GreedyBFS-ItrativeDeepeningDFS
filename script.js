@@ -13,11 +13,11 @@ class Graph {
 		}
 	}
 	
-    addEdge(vertex, node) {
-        if (this.adjList.has(vertex)){
-            if (this.adjList.has(node)) {
-                let arr = this.adjList.get(vertex)
-                if (!arr.includes(node)) {
+	addEdge(vertexStartNode, node, weight) {
+		if (this.adjecencyMatrix2D.has(vertexStartNode)){
+			if (this.adjecencyMatrix2D.has(node)) {
+				let arr = this.adjecencyMatrix2D.get(vertexStartNode)
+				if (!arr.includes(node)) {
 					arr.push({
 						node, 
 						weight

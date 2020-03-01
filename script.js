@@ -226,13 +226,77 @@ var cy = cytoscape({
 	]
 });
 
-let graph = new Graph()
-graph.addVertex('A')
-graph.addVertex('B')
-graph.addVertex('C')
-graph.addVertex('D')
-graph.addVertex('E')
-graph.addVertex('F')
+let graphObjectPresent = new Graph()
+graphObjectPresent.addVertexNodeOfGraphs('Arad')
+graphObjectPresent.addVertexNodeOfGraphs('Zerind')
+graphObjectPresent.addVertexNodeOfGraphs('Oradea')
+graphObjectPresent.addVertexNodeOfGraphs('Sibiu')
+graphObjectPresent.addVertexNodeOfGraphs('Timisoara')
+graphObjectPresent.addVertexNodeOfGraphs('Lugoj')
+graphObjectPresent.addVertexNodeOfGraphs('Mehadia')
+graphObjectPresent.addVertexNodeOfGraphs('Drobeta')
+graphObjectPresent.addVertexNodeOfGraphs('Craiova')
+graphObjectPresent.addVertexNodeOfGraphs('Rimnicu Vilcea')
+graphObjectPresent.addVertexNodeOfGraphs('Pitesti')
+graphObjectPresent.addVertexNodeOfGraphs('Fagaras')
+graphObjectPresent.addVertexNodeOfGraphs('Bucharest')
+graphObjectPresent.addVertexNodeOfGraphs('Giurgiu')
+// graphObjectPresent.addVertexNodeOfGraphs('Lugoj')
+
+var g = graphObjectPresent.adjecencyMatrix2D
+
+for(var i = 0; i < graphObjectPresent.adjecencyMatrix2D.size; i++)
+cy.add({
+	data: { id: g.pop }
+})
+
+// console.log(graphObjectPresent.adjecencyMatrix2D);
+
+graphObjectPresent.addEdge('Arad', 'Zerind', 75)
+graphObjectPresent.addEdge('Arad', 'Sibiu', 140)
+graphObjectPresent.addEdge('Arad', 'Timisoara', 118)
+graphObjectPresent.addEdge('Zerind', 'Oradea', 71)
+graphObjectPresent.addEdge('Sibiu', 'Fagaras', 99)
+graphObjectPresent.addEdge('Sibiu', 'Rimnicu Vilcea', 80)
+graphObjectPresent.addEdge('Oradea', 'Sibiu', 151)
+graphObjectPresent.addEdge('Timisoara', 'Lugoj', 111)
+graphObjectPresent.addEdge('Lugoj', 'Mehadia', 70)
+graphObjectPresent.addEdge('Mehadia', 'Drobeta', 75)
+graphObjectPresent.addEdge('Drobeta', 'Craiova', 120)
+graphObjectPresent.addEdge('Craiova', 'Rimnicu Vilcea', 146)
+graphObjectPresent.addEdge('Rimnicu Vilcea', 'Pitesti', 97)
+graphObjectPresent.addEdge('Pitesti', 'Craiova', 138)
+graphObjectPresent.addEdge('Pitesti', 'Bucharest', 101)
+graphObjectPresent.addEdge('Fagaras', 'Bucharest', 211)
+graphObjectPresent.addEdge('Bucharest', 'Giurgiu',90)
+
+graphObjectPresent.addEdge('Zerind', 'Arad', 75)
+graphObjectPresent.addEdge('Sibiu', 'Arad', 140)
+graphObjectPresent.addEdge('Timisoara', 'Arad', 118)
+graphObjectPresent.addEdge('Oradea', 'Zerind', 71)
+graphObjectPresent.addEdge('Fagaras', 'Sibiu', 99)
+graphObjectPresent.addEdge('Rimnicu Vilcea', 'Sibiu', 80)
+graphObjectPresent.addEdge('Sibiu', 'Oradea', 151)
+graphObjectPresent.addEdge('Lugoj', 'Timisoara', 111)
+graphObjectPresent.addEdge('Mehadia', 'Lugoj', 70)
+graphObjectPresent.addEdge('Drobeta', 'Mehadia',75)
+graphObjectPresent.addEdge('Craiova', 'Drobeta', 120)
+graphObjectPresent.addEdge('Rimnicu Vilcea', 'Craiova', 146)
+graphObjectPresent.addEdge('Pitesti', 'Rimnicu Vilcea',97)
+graphObjectPresent.addEdge('Craiova', 'Pitesti',138)
+graphObjectPresent.addEdge('Bucharest', 'Pitesti', 101)
+graphObjectPresent.addEdge('Bucharest', 'Fagaras', 211)
+graphObjectPresent.addEdge('Giurgiu', 'Bucharest',90)
+
+// graphObjectPresent.addEdge('C', 'B')
+
+graphObjectPresent.printGraph()
+
+graphObjectPresent.breathFirstSearch()
+
+graphObjectPresent.uniformCostSearch()
+
+graphObjectPresent.greedyBestFirstSearch()
 
 // console.log(graph.adjList);
 

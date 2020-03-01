@@ -298,7 +298,7 @@ graphObjectPresent.uniformCostSearch()
 
 graphObjectPresent.greedyBestFirstSearch()
 
-// console.log(graph.adjList);
+graphObjectPresent.iterativeDeepeningSearch()
 
 graph.addEdge('A', 'B')
 graph.addEdge('A', 'D')

@@ -39,6 +39,41 @@ class Graph {
 		}
 	}
 
+	createVisitedObject(){
+		let arr = {};
+		for(let key of this.adjecencyMatrix2D.keys()){
+			arr[key] = false;
+			
+		}
+		return arr;  
+	}
+	
+	breathFirstSearch(){
+		console.log("------------------------BREATH-FIRST-SEARCH---------------------");
+		
+		let visited = this.createVisitedObject();
+		let q = [];
+		let br = 0;
+		visited[this.start] = true;
+		q.push(this.start);
+		// console.log(q);
+		let current;
+			
+		do{
+			current = q.pop()
+			br++;
+			// console.log(visited);
+			
+			console.log(q);
+			console.log(current);
+			let arr = this.adjecencyMatrix2D.get(current);	
+			console.log(arr)
+
+			for(let elem of arr){
+				if(!visited[elem.node]){
+					visited[elem.node] = true;
+					q.unshift(elem.node);
+				}
 }
 
 let graph = new Graph()

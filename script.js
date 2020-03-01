@@ -1,5 +1,5 @@
 class Graph {
-    constructor() {
+	constructor() {
 		this.adjecencyMatrix2D = new Map();
 		this.start = "Arad"
 		this.stop = "Bucharest"

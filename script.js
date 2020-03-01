@@ -18,17 +18,20 @@ class Graph {
             if (this.adjList.has(node)) {
                 let arr = this.adjList.get(vertex)
                 if (!arr.includes(node)) {
-                    arr.push(node)
-                } else {
-                    throw "Node Already Exists"
-                }
-            } else {
-                throw "Can't add non-existing vertex -> '${node}'"
-            }
-        } else {
-            throw "You should add '${vertex}' first"
-        }
-    }
+					arr.push({
+						node, 
+						weight
+					})
+				} else {
+					throw "Node Already Exists"
+				}
+			} else {
+				throw "Can't add non-existing vertex -> '${node}'"
+			}
+		} else {
+			throw "You should add '${vertex}' first"
+		}
+	}
 
     print(){
         for (let [key, value] of this.adjList) {
